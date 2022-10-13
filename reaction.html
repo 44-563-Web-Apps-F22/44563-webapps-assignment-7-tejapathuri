@@ -80,6 +80,36 @@
         }
     </script>
 
-
+    <!--Part 6: Add in the code to handle the count down and check against the time the reaction button was pressed. -->
+    <script>
+         function startTime() {
+          // BONUS
+          let countdown = Math.floor(Math.random() * 9) + 2
+            console.log()
+            for (let i = 0; i < countdown; i++) {
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = i
+                }, ((countdown - 1 - i) * 1000));
+            }
+            setTimeout(() => {
+                if (myTime == undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow"
+                } else {
+                    let buttonTime = Date.now()
+                    document.getElementById("target").innerHTML = "Time was " + (buttonTime - myTime)
+                }
+            }, 3000);
+        }
+    </script>
+<div class="container">
+    <ul class="pager">
+        <li class="previous">
+            <a href="treasure.html">Treasure Hunt</a>
+        </li>
+        <li class="next">
+            <a href="cycler.html">Cycler Page</a>
+        </li> 
+    </ul>
+</div>
 </body>
 </html>
